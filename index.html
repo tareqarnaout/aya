@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Madaba Tour Guide</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f4f6f7;padding:20px;}
+h1{text-align:center;color:#2c3e50;}
+button{background:#3498db;color:white;border:none;padding:10px 15px;margin:5px 0;border-radius:6px;cursor:pointer;}
+button:hover{background:#2980b9;}
+.section{background:white;padding:15px;margin-top:15px;border-radius:10px;}
+.hidden{display:none;}
+iframe{margin-top:8px;border-radius:8px;}
+</style>
+<script>
+function toggle(id){document.getElementById(id).classList.toggle("hidden");}
+</script>
+</head>
+<body>
+
+<h1>Madaba Tour Guide</h1>
+
+<div class="section">
+<button onclick="toggle('restaurants')">🍽 Restaurants</button>
+<button onclick="toggle('hotels')">🏨 Hotels</button>
+<button onclick="toggle('museums')">🏛 Museums</button>
+<button onclick="toggle('donation')">🤍 Donation Places</button>
+</div>
+
+<!-- Restaurants -->
+<div id="restaurants" class="section hidden">
+<h2>Restaurants</h2>
+<button onclick="toggle('fish')">Fish</button>
+<button onclick="toggle('arabic')">Arabic</button>
+<button onclick="toggle('breakfast')">Breakfast</button>
+
+<div id="fish" class="hidden">
+<p>Fokar & Bhar Restaurant</p>
+<iframe src="https://www.google.com/maps?q=Fokar%20%26%20Bhar%20Restaurant%20Madaba&output=embed" width="100%" height="200"></iframe>
+<p>مطعم وادي الواله لبيع الأسماك</p>
+<iframe src="https://www.google.com/maps?q=وادي%20الواله%20مطعم%20مادبا&output=embed" width="100%" height="200"></iframe>
+</div>
+
+<div id="arabic" class="hidden">
+<p>مطعم مندي مادبا</p>
+<iframe src="https://www.google.com/maps?q=مطعم%20مندي%20مادبا&output=embed" width="100%" height="200"></iframe>
+<p>مطعم حارة جدودنا</p>
+<iframe src="https://www.google.com/maps?q=حارة%20جدودنا%20مادبا&output=embed" width="100%" height="200"></iframe>
+<p>مطعم Ayar</p>
+<iframe src="https://www.google.com/maps?q=Ayar%20Restaurant%20Madaba&output=embed" width="100%" height="200"></iframe>
+</div>
+
+<div id="breakfast" class="hidden">
+<p>مطعم حارة جدودنا</p>
+<iframe src="https://www.google.com/maps?q=حارة%20جدودنا%20مادبا&output=embed" width="100%" height="200"></iframe>
+<p>مطعم ايولا</p>
+<iframe src="https://www.google.com/maps?q=ايولا%20مطعم%20مادبا&output=embed" width="100%" height="200"></iframe>
+</div>
+</div>
+
+<!-- Hotels -->
+<div id="hotels" class="section hidden">
+<h2>Hotels</h2>
+<button onclick="toggle('centre')">Centre</button>
+<button onclick="toggle('deadsea')">Dead Sea</button>
+
+<div id="centre" class="hidden">
+<p>Mariam Hotel</p>
+<iframe src="https://www.google.com/maps?q=Mariam%20Hotel%20Madaba&output=embed" width="100%" height="200"></iframe>
+<p>Mosaic City Hotel</p>
+<iframe src="https://www.google.com/maps?q=Mosaic%20City%20Hotel%20Madaba&output=embed" width="100%" height="200"></iframe>
+</div>
+
+<div id="deadsea" class="hidden">
+<p>Porto Dead Sea</p>
+<iframe src="https://www.google.com/maps?q=Porto%20Dead%20Sea&output=embed" width="100%" height="200"></iframe>
+<p>Dead Sea Spa Hotel</p>
+<iframe src="https://www.google.com/maps?q=Dead%20Sea%20Spa%20Hotel&output=embed" width="100%" height="200"></iframe>
+</div>
+</div>
+
+<!-- Museums -->
+<div id="museums" class="section hidden">
+<h2>Museums</h2>
+<p>Madaba Archaeological Museum</p>
+<iframe src="https://www.google.com/maps?q=Madaba%20Archaeological%20Museum&output=embed" width="100%" height="200"></iframe>
+<p>متحف مادبا الحكاية</p>
+<iframe src="https://www.google.com/maps?q=متحف%20مادبا%20الحكاية&output=embed" width="100%" height="200"></iframe>
+</div>
+
+<!-- Donation -->
+<div id="donation" class="section hidden">
+<h2>Donation Places</h2>
+<p>جمعية الهلال الأحمر الأردني - فرع مادبا</p>
+<iframe src="https://www.google.com/maps?q=Jordanian%20Red%20Crescent%20Madaba&output=embed" width="100%" height="200"></iframe>
+<p>جمعية ماريوحنا الخيرية</p>
+<iframe src="https://www.google.com/maps?q=جمعية%20ماريوحنا%20الخيرية%20مادبا&output=embed" width="100%" height="200"></iframe>
+<p>جمعية المركز الإسلامي</p>
+<iframe src="https://www.google.com/maps?q=جمعية%20المركز%20الإسلامي%20مادبا&output=embed" width="100%" height="200"></iframe>
+</div>
+
+</body>
+</html>
