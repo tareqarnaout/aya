@@ -3,101 +3,334 @@
 <head>
 <meta charset="UTF-8">
 <title>Madaba Tour Guide</title>
+
 <style>
-body{font-family:Arial,sans-serif;background:#f4f6f7;padding:20px;}
-h1{text-align:center;color:#2c3e50;}
-button{background:#3498db;color:white;border:none;padding:10px 15px;margin:5px 0;border-radius:6px;cursor:pointer;}
-button:hover{background:#2980b9;}
-.section{background:white;padding:15px;margin-top:15px;border-radius:10px;}
-.hidden{display:none;}
-iframe{margin-top:8px;border-radius:8px;}
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f4f4;
+}
+header{
+    background:url("https://images.unsplash.com/photo-1601972602237-8c79241e468b") center/cover;
+    height:90vh;
+    color:white;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+header h1{
+    font-size:48px;
+    background:rgba(0,0,0,0.5);
+    padding:20px;
+}
+nav{
+    background:#2c3e50;
+    text-align:center;
+    padding:15px;
+}
+nav button{
+    margin:5px;
+    padding:12px 20px;
+    border:none;
+    border-radius:8px;
+    background:#e67e22;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+}
+nav button:hover{background:#d35400;}
+.section{display:none; padding:30px;}
+img{width:100%; max-height:300px; object-fit:cover; border-radius:12px;}
+
+.place-btn{
+    width:100%;
+    padding:12px;
+    margin:6px 0;
+    border:none;
+    border-radius:8px;
+    background:#3498db;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    text-align:left;
+}
+.place-btn:hover{background:#2980b9;}
+
+.map{
+    display:none;
+    margin-bottom:20px;
+    border-radius:12px;
+    overflow:hidden;
+}
+iframe{
+    width:100%;
+    height:250px;
+    border:0;
+}
+
+.stars{color:gold;}
 </style>
+
 <script>
-function toggle(id){document.getElementById(id).classList.toggle("hidden");}
+function showSection(id){
+    document.querySelectorAll('.section').forEach(s=>s.style.display="none");
+    document.getElementById(id).style.display="block";
+}
+function toggleMap(id){
+    let x=document.getElementById(id);
+    x.style.display = (x.style.display==="block") ? "none" : "block";
+}
 </script>
 </head>
+
 <body>
 
+<header>
 <h1>Madaba Tour Guide</h1>
+<p>Explore Madaba’s Food, Hotels & Heritage 💗</p>
+</header>
 
-<div class="section">
-<button onclick="toggle('restaurants')">🍽 Restaurants</button>
-<button onclick="toggle('hotels')">🏨 Hotels</button>
-<button onclick="toggle('museums')">🏛 Museums</button>
-<button onclick="toggle('donation')">🤍 Donation Places</button>
+<nav>
+<button onclick="showSection('food')">Food</button>
+<button onclick="showSection('hotels')">Hotels</button>
+<button onclick="showSection('tourism')">Tourist Places</button>
+<button onclick="showSection('heritage')">Heritage Sites</button>
+<button onclick="showSection('donation')">Donation</button>
+</nav>
+
+<!-- FOOD -->
+<div id="food" class="section">
+<img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe">
+<h2>Food</h2>
+
+<h3>Fish</h3>
+<button class="place-btn" onclick="toggleMap('f1')">Wadi Al Wala Restaurant</button>
+<div id="f1" class="map"><iframe src="https://www.google.com/maps?q=Wadi+Al+Wala+Restaurant+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('f2')">Sea Food Restaurant</button>
+<div id="f2" class="map"><iframe src="https://www.google.com/maps?q=Sea+Food+Restaurant+Madaba&output=embed"></iframe></div>
+
+<h3>Arabic</h3>
+<button class="place-btn" onclick="toggleMap('a1')">Harit Jdoudna</button>
+<div id="a1" class="map"><iframe src="https://www.google.com/maps?q=Harit+Jdoudna+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a2')">Ayar</button>
+<div id="a2" class="map"><iframe src="https://www.google.com/maps?q=Ayar+Restaurant+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a3')">Beit Al Kharoub</button>
+<div id="a3" class="map"><iframe src="https://www.google.com/maps?q=Beit+Al+Kharoub+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a4')">Fakar and Bahar</button>
+<div id="a4" class="map"><iframe src="https://www.google.com/maps?q=Fakar+and+Bahar+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a5')">Marah Al Salameh</button>
+<div id="a5" class="map"><iframe src="https://www.google.com/maps?q=Marah+Al+Salameh+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a6')">Ayola Restaurant</button>
+<div id="a6" class="map"><iframe src="https://www.google.com/maps?q=Ayola+Restaurant+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a7')">Fire House</button>
+<div id="a7" class="map"><iframe src="https://www.google.com/maps?q=Fire+House+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a8')">Jaw Zaman</button>
+<div id="a8" class="map"><iframe src="https://www.google.com/maps?q=Jaw+Zaman+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a9')">Al Housh</button>
+<div id="a9" class="map"><iframe src="https://www.google.com/maps?q=Al+Housh+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a10')">Salat Al Ghadaa</button>
+<div id="a10" class="map"><iframe src="https://www.google.com/maps?q=Salat+Al+Ghadaa+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a11')">Madaba Gate</button>
+<div id="a11" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Gate+Restaurant&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a12')">Mandi Madaba</button>
+<div id="a12" class="map"><iframe src="https://www.google.com/maps?q=Mandi+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a13')">Bab Al Shams</button>
+<div id="a13" class="map"><iframe src="https://www.google.com/maps?q=Bab+Al+Shams+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a14')">Crispy Chicken</button>
+<div id="a14" class="map"><iframe src="https://www.google.com/maps?q=Crispy+Chicken+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a15')">Btamon</button>
+<div id="a15" class="map"><iframe src="https://www.google.com/maps?q=Btamon+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('a16')">Golden Chef</button>
+<div id="a16" class="map"><iframe src="https://www.google.com/maps?q=Golden+Chef+Madaba&output=embed"></iframe></div>
+
+<h3>Coffee House</h3>
+<button class="place-btn" onclick="toggleMap('c1')">Rise</button>
+<div id="c1" class="map"><iframe src="https://www.google.com/maps?q=Rise+Cafe+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c2')">Mosaic Specialty Coffee</button>
+<div id="c2" class="map"><iframe src="https://www.google.com/maps?q=Mosaic+Specialty+Coffee+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c3')">Loqma</button>
+<div id="c3" class="map"><iframe src="https://www.google.com/maps?q=Loqma+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c4')">Arabic Café</button>
+<div id="c4" class="map"><iframe src="https://www.google.com/maps?q=Arabic+Cafe+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c5')">Kawon</button>
+<div id="c5" class="map"><iframe src="https://www.google.com/maps?q=Kawon+Cafe+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c6')">Dosse</button>
+<div id="c6" class="map"><iframe src="https://www.google.com/maps?q=Dosse+Cafe+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('c7')">Cerruti</button>
+<div id="c7" class="map"><iframe src="https://www.google.com/maps?q=Cerruti+Cafe+Madaba&output=embed"></iframe></div>
 </div>
 
-<!-- Restaurants -->
-<div id="restaurants" class="section hidden">
-<h2>Restaurants</h2>
-<button onclick="toggle('fish')">Fish</button>
-<button onclick="toggle('arabic')">Arabic</button>
-<button onclick="toggle('breakfast')">Breakfast</button>
-
-<div id="fish" class="hidden">
-<p>Fokar & Bhar Restaurant</p>
-<iframe src="https://www.google.com/maps?q=Fokar%20%26%20Bhar%20Restaurant%20Madaba&output=embed" width="100%" height="200"></iframe>
-<p>مطعم وادي الواله لبيع الأسماك</p>
-<iframe src="https://www.google.com/maps?q=وادي%20الواله%20مطعم%20مادبا&output=embed" width="100%" height="200"></iframe>
-</div>
-
-<div id="arabic" class="hidden">
-<p>مطعم مندي مادبا</p>
-<iframe src="https://www.google.com/maps?q=مطعم%20مندي%20مادبا&output=embed" width="100%" height="200"></iframe>
-<p>مطعم حارة جدودنا</p>
-<iframe src="https://www.google.com/maps?q=حارة%20جدودنا%20مادبا&output=embed" width="100%" height="200"></iframe>
-<p>مطعم Ayar</p>
-<iframe src="https://www.google.com/maps?q=Ayar%20Restaurant%20Madaba&output=embed" width="100%" height="200"></iframe>
-</div>
-
-<div id="breakfast" class="hidden">
-<p>مطعم حارة جدودنا</p>
-<iframe src="https://www.google.com/maps?q=حارة%20جدودنا%20مادبا&output=embed" width="100%" height="200"></iframe>
-<p>مطعم ايولا</p>
-<iframe src="https://www.google.com/maps?q=ايولا%20مطعم%20مادبا&output=embed" width="100%" height="200"></iframe>
-</div>
-</div>
-
-<!-- Hotels -->
-<div id="hotels" class="section hidden">
+<!-- HOTELS -->
+<div id="hotels" class="section">
+<img src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
 <h2>Hotels</h2>
-<button onclick="toggle('centre')">Centre</button>
-<button onclick="toggle('deadsea')">Dead Sea</button>
 
-<div id="centre" class="hidden">
-<p>Mariam Hotel</p>
-<iframe src="https://www.google.com/maps?q=Mariam%20Hotel%20Madaba&output=embed" width="100%" height="200"></iframe>
-<p>Mosaic City Hotel</p>
-<iframe src="https://www.google.com/maps?q=Mosaic%20City%20Hotel%20Madaba&output=embed" width="100%" height="200"></iframe>
+<h3>Centre</h3>
+<button class="place-btn" onclick="toggleMap('h1')">Madaba Hotel ★★★★</button>
+<div id="h1" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Hotel&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h2')">Grand Hotel Madaba ★★★★</button>
+<div id="h2" class="map"><iframe src="https://www.google.com/maps?q=Grand+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h3')">Saint John Hotel ★★★★☆</button>
+<div id="h3" class="map"><iframe src="https://www.google.com/maps?q=Saint+John+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h4')">Aitch Boutique Hotel ★★★★☆</button>
+<div id="h4" class="map"><iframe src="https://www.google.com/maps?q=Aitch+Boutique+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h5')">Mosaic City Hotel ★★★★☆</button>
+<div id="h5" class="map"><iframe src="https://www.google.com/maps?q=Mosaic+City+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h6')">Blue Stone Hotel Madaba ★★★★★</button>
+<div id="h6" class="map"><iframe src="https://www.google.com/maps?q=Blue+Stone+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h7')">Salome Hotel ★★★★☆</button>
+<div id="h7" class="map"><iframe src="https://www.google.com/maps?q=Salome+Hotel+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h8')">Mariam Hotel ★★★★</button>
+<div id="h8" class="map"><iframe src="https://www.google.com/maps?q=Mariam+Hotel+Madaba&output=embed"></iframe></div>
+
+<h3>Dead Sea</h3>
+<button class="place-btn" onclick="toggleMap('h9')">Hilton Dead Sea ★★★★☆</button>
+<div id="h9" class="map"><iframe src="https://www.google.com/maps?q=Hilton+Dead+Sea&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h10')">Dead Sea Spa Resort ★★★★☆</button>
+<div id="h10" class="map"><iframe src="https://www.google.com/maps?q=Dead+Sea+Spa+Resort&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h11')">Movenpick Dead Sea ★★★★☆</button>
+<div id="h11" class="map"><iframe src="https://www.google.com/maps?q=Movenpick+Dead+Sea&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h12')">Crowne Plaza Jordan ★★★★☆</button>
+<div id="h12" class="map"><iframe src="https://www.google.com/maps?q=Crowne+Plaza+Dead+Sea&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h13')">Kempinski Dead Sea ★★★★★</button>
+<div id="h13" class="map"><iframe src="https://www.google.com/maps?q=Kempinski+Dead+Sea&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('h14')">Porto Dead Sea ★★★★★</button>
+<div id="h14" class="map"><iframe src="https://www.google.com/maps?q=Porto+Dead+Sea&output=embed"></iframe></div>
 </div>
 
-<div id="deadsea" class="hidden">
-<p>Porto Dead Sea</p>
-<iframe src="https://www.google.com/maps?q=Porto%20Dead%20Sea&output=embed" width="100%" height="200"></iframe>
-<p>Dead Sea Spa Hotel</p>
-<iframe src="https://www.google.com/maps?q=Dead%20Sea%20Spa%20Hotel&output=embed" width="100%" height="200"></iframe>
-</div>
+<!-- TOURISM -->
+<div id="tourism" class="section">
+<img src="https://images.unsplash.com/photo-1581091215367-59ab6c9b54b1">
+<h2>Tourist Places</h2>
+
+<button class="place-btn" onclick="toggleMap('t1')">Madaba Archaeological Park</button>
+<div id="t1" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Archaeological+Park&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t2')">Al Salam Square</button>
+<div id="t2" class="map"><iframe src="https://www.google.com/maps?q=Al+Salam+Square+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t3')">Madaba Archaeological Garden</button>
+<div id="t3" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Archaeological+Garden&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t4')">Madaba Museum</button>
+<div id="t4" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Museum&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t5')">Madaba Visitor Center</button>
+<div id="t5" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Visitor+Center&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t6')">Madaba Park</button>
+<div id="t6" class="map"><iframe src="https://www.google.com/maps?q=Madaba+Park&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('t7')">Heritage Story Museum</button>
+<div id="t7" class="map"><iframe src="https://www.google.com/maps?q=Heritage+Story+Museum+Madaba&output=embed"></iframe></div>
 </div>
 
-<!-- Museums -->
-<div id="museums" class="section hidden">
-<h2>Museums</h2>
-<p>Madaba Archaeological Museum</p>
-<iframe src="https://www.google.com/maps?q=Madaba%20Archaeological%20Museum&output=embed" width="100%" height="200"></iframe>
-<p>متحف مادبا الحكاية</p>
-<iframe src="https://www.google.com/maps?q=متحف%20مادبا%20الحكاية&output=embed" width="100%" height="200"></iframe>
+<!-- HERITAGE -->
+<div id="heritage" class="section">
+<img src="https://images.unsplash.com/photo-1605812466869-dab071e96c35">
+<h2>Heritage Sites</h2>
+
+<button class="place-btn" onclick="toggleMap('hr1')">Mount Nebo</button>
+<div id="hr1" class="map"><iframe src="https://www.google.com/maps?q=Mount+Nebo&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('hr2')">Dead Sea</button>
+<div id="hr2" class="map"><iframe src="https://www.google.com/maps?q=Dead+Sea&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('hr3')">St. George's Church</button>
+<div id="hr3" class="map"><iframe src="https://www.google.com/maps?q=St+George+Church+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('hr4')">Church of the Apostles</button>
+<div id="hr4" class="map"><iframe src="https://www.google.com/maps?q=Church+of+the+Apostles+Madaba&output=embed"></iframe></div>
+
+<button class="place-btn" onclick="toggleMap('hr5')">Church of the Martyrs</button>
+<div id="hr5" class="map"><iframe src="https://www.google.com/maps?q=Church+of+the+Martyrs+Madaba&output=embed"></iframe></div>
 </div>
 
-<!-- Donation -->
-<div id="donation" class="section hidden">
+<!-- DONATION -->
+<div id="donation" class="section">
+<img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb">
 <h2>Donation Places</h2>
-<p>جمعية الهلال الأحمر الأردني - فرع مادبا</p>
-<iframe src="https://www.google.com/maps?q=Jordanian%20Red%20Crescent%20Madaba&output=embed" width="100%" height="200"></iframe>
-<p>جمعية ماريوحنا الخيرية</p>
-<iframe src="https://www.google.com/maps?q=جمعية%20ماريوحنا%20الخيرية%20مادبا&output=embed" width="100%" height="200"></iframe>
-<p>جمعية المركز الإسلامي</p>
-<iframe src="https://www.google.com/maps?q=جمعية%20المركز%20الإسلامي%20مادبا&output=embed" width="100%" height="200"></iframe>
+
+<p style="background:#fdebd0; padding:15px; border-radius:10px; font-weight:bold; font-size:18px;">
+We would like to see you having a free activity with the community 💗
+</p>
+
+<button class="place-btn" onclick="<button class="place-btn" onclick="toggleMap('d1')">Tkiyet Um Ali</button>
+<div id="d1" class="map">
+<iframe src="https://www.google.com/maps?q=Tkiyet+Um+Ali+Madaba&output=embed"></iframe>
 </div>
+
+<button class="place-btn" onclick="toggleMap('d2')">Lamsat Hanan Orphans Center</button>
+<div id="d2" class="map">
+<iframe src="https://www.google.com/maps?q=Lamsat+Hanan+Orphans+Center+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d3')">Islamic Center Charity Society</button>
+<div id="d3" class="map">
+<iframe src="https://www.google.com/maps?q=Islamic+Center+Charity+Society+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d4')">Red Crescent Society</button>
+<div id="d4" class="map">
+<iframe src="https://www.google.com/maps?q=Red+Crescent+Society+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d5')">Orphans Fund Development Foundation</button>
+<div id="d5" class="map">
+<iframe src="https://www.google.com/maps?q=Orphans+Fund+Development+Foundation+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d6')">YWCA</button>
+<div id="d6" class="map">
+<iframe src="https://www.google.com/maps?q=YWCA+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d7')">Blood Bank</button>
+<div id="d7" class="map">
+<iframe src="https://www.google.com/maps?q=Blood+Bank+Madaba&output=embed"></iframe>
+</div>
+
+<button class="place-btn" onclick="toggleMap('d8')">Suhool Moab Charity Association</button>
+<div id="d8" class="map">
+<iframe src="https://www.google.com/maps?q=Suhool+Moab+Charity+Association+Madaba&output=embed"></iframe>
+</div>
+
+</div> <!-- نهاية قسم التبرع -->
 
 </body>
 </html>
